@@ -8,7 +8,7 @@ import routerUsers from "./modules/users/routes.js";
 import routerProfile from "./modules/profile/routes.js";
 import fs from "fs";
 import signale from "signale";
-import dotEnv from 'dotenv'
+import dotEnv from 'dotenv'; 
 
 dotEnv.config()
 
