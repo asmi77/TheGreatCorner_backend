@@ -62,13 +62,14 @@ app.use("/profile", routerProfile);
 
 //Mongoose DB local Connection
 // mongoose.connect("mongodb://localhost:27017/greatcorner", function(err) {
-  mongoose.connect(process.env.dataBase ||"mongodb://heroku_slmhnsz0:f95l215cja2dq2fhulp5rtjj1g@ds119768.mlab.com:19768/heroku_slmhnsz0", function(err) {
+  mongoose.Promise = global.Promise
+  mongoose.connect(process.env.dataBase ||"mongodb://heroku_slmhnsz0:f95l215cja2dq2fhulp5rtjj1g@ds119768.mlab.com:19768/heroku_slmhnsz0", (err) => {
   if (err) {
     throw err;
   } else {
     console.log("Mongoose database is connected");
     let port = process.env.PORT || 8090
-    app.listen(PORT, () => {
+    app.listen(port, () => {
       //use backticks to use es6 variable without concatenation
       console.log('App listens on port: ' + port)
     });
