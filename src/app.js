@@ -65,8 +65,9 @@ app.use("/profile", routerProfile);
     throw err;
   } else {
     console.log("Mongoose database is connected");
-    app.listen(PORT || 8090, () => {
+    app.listen(PORT, () => {
       //use backticks to use es6 variable without concatenation
+      console.log('App listens on port: ' + PORT)
     });
   }
 });
