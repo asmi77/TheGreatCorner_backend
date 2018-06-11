@@ -8,13 +8,15 @@ import routerUsers from "./modules/users/routes.js";
 import routerProfile from "./modules/profile/routes.js";
 import fs from "fs";
 import signale from "signale";
+import dotEnv from 'dotenv'
+
+dotEnv.config()
 
 // import checkToken from './helpers/helpers.js';
 // import dotEnv from 'dotenv';
 // dotEnv.config();
 
 let app = express();
-const PORT = 8090;
 
 console.log('dirname', __dirname); 
 // dirname /home/asma/Documents/projects/leBonCoin/leboncoin/back/src
@@ -60,14 +62,15 @@ app.use("/profile", routerProfile);
 
 //Mongoose DB local Connection
 // mongoose.connect("mongodb://localhost:27017/greatcorner", function(err) {
-  mongoose.connect("mongodb://heroku_slmhnsz0:f95l215cja2dq2fhulp5rtjj1g@ds119768.mlab.com:19768/heroku_slmhnsz0", function(err) {
+  mongoose.connect(process.env.dataBase ||"mongodb://heroku_slmhnsz0:f95l215cja2dq2fhulp5rtjj1g@ds119768.mlab.com:19768/heroku_slmhnsz0", function(err) {
   if (err) {
     throw err;
   } else {
     console.log("Mongoose database is connected");
+    let port = process.env.PORT || 8090
     app.listen(PORT, () => {
       //use backticks to use es6 variable without concatenation
-      console.log('App listens on port: ' + PORT)
+      console.log('App listens on port: ' + port)
     });
   }
 });
