@@ -67,7 +67,6 @@ app.use("/profile", routerProfile);
     console.log("Mongoose database is connected");
     app.listen(PORT, () => {
       //use backticks to use es6 variable without concatenation
-      console.log(`server has started on port ${PORT}`);
     });
   }
 });
