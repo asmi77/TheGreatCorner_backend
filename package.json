@@ -4,9 +4,9 @@
   "description": "Express API with login and sign up authentication ",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/index.babel.js",
+    "start": "node src/index.babel.js",
     "test": "node ./test-server/routage",
-    "dev": "nodemon dist/app.js"
+    "dev": "node dist/app.js"
   },
   "repository": {
     "type": "git",
