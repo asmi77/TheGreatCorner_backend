@@ -1,7 +1,7 @@
 {
-  "name": "express_api_login_authentication",
+  "name": "the_great_corner",
   "version": "1.0.0",
-  "description": "Express API with login and sign up authentication ",
+  "description": "sell or buy (un)wanted furnitures",
   "main": "app.js",
   "scripts": {
     "start": "node src/index.babel.js",

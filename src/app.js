@@ -58,8 +58,9 @@ app.use("/products", routerProducts);
 app.use("/users", routerUsers);
 app.use("/profile", routerProfile);
 
-//Mongoose DB Connection
-mongoose.connect("mongodb://localhost:27017/greatcorner", function(err) {
+//Mongoose DB local Connection
+// mongoose.connect("mongodb://localhost:27017/greatcorner", function(err) {
+  mongoose.connect("mongodb://heroku_slmhnsz0:f95l215cja2dq2fhulp5rtjj1g@ds119768.mlab.com:19768/heroku_slmhnsz0", function(err) {
   if (err) {
     throw err;
   } else {
