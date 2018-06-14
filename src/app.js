@@ -76,34 +76,34 @@ app.use("/profile", routerProfile);
   }
 });
 
-//Homepage
-app.get("/", () => {
-  console.log("Hello Asma");
-});
+// //Homepage
+// app.get("/", () => {
+//   console.log("Hello Asma");
+// });
 
-//Validate token
-app.get("/token", (req, res) => {
-  let storedToken = req.headers.token;
-  jwt.verify(storedToken, "mysecret", function(err, decoded) {
-    if (err) {
-      throw err;
-    } else {
-      res.status(200).send(decoded);
-      console.log(decoded.iat);
-    }
-  });
-});
+// //Validate token
+// app.get("/token", (req, res) => {
+//   let storedToken = req.headers.token;
+//   jwt.verify(storedToken, "mysecret", function(err, decoded) {
+//     if (err) {
+//       throw err;
+//     } else {
+//       res.status(200).send(decoded);
+//       console.log(decoded.iat);
+//     }
+//   });
+// });
 
-//Display token properties of validation
-app.get("/iat", (req, res) => {
-  let username = req.headers.username;
-  let userIat = req.headers.iat;
-  res.send({
-    username: username,
-    iat: userIat
-  });
-  console.log({
-    username: username,
-    iat: userIat
-  });
-});
+// //Display token properties of validation
+// app.get("/iat", (req, res) => {
+//   let username = req.headers.username;
+//   let userIat = req.headers.iat;
+//   res.send({
+//     username: username,
+//     iat: userIat
+//   });
+//   console.log({
+//     username: username,
+//     iat: userIat
+//   });
+// });
