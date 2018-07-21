@@ -34,7 +34,7 @@ The GreatCorner is a full javascript app builded with :
 
 ## Deployment
 
-Deployed on [TheGreatCorner](#)
+Deployed on [TheGreatCorner](https://thegreatcorner.herokuapp.com/#/)
 
 ## Authors
 
